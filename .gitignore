@@ -5,7 +5,7 @@
 
 # Rust
 backend/target/
-backend/Cargo.lock
+# Note: Cargo.lock should be committed for applications (not ignored)
 
 # Node
 frontend/node_modules/
