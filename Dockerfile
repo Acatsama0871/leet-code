@@ -22,8 +22,9 @@ FROM rust:slim AS backend-builder
 
 WORKDIR /app
 
-# Install build dependencies
+# Install build dependencies (DuckDB needs C++ compiler)
 RUN apt-get update && apt-get install -y \
+    build-essential \
     pkg-config \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
