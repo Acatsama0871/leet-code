@@ -30,6 +30,9 @@ A professional full-stack application for tracking LeetCode progress across mult
 ## Prerequisites
 
 - **Docker & Docker Compose** (for deployment)
+  - **Important**: Docker needs **at least 8GB RAM** allocated
+  - On Docker Desktop: Settings → Resources → Memory → 8GB
+  - Building DuckDB from source requires significant memory on ARM64/Apple Silicon
 - **OR** Manual setup:
   - Rust 1.75+
   - Node.js 20+
