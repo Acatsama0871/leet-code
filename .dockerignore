@@ -1,0 +1,48 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+!README.md
+CLAUDE.md
+
+# Python (old Streamlit app)
+__pycache__
+*.pyc
+.venv
+venv/
+*.py
+pyproject.toml
+uv.lock
+.python-version
+
+# Backend
+backend/target
+backend/.env
+backend/.env.local
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/.env
+frontend/.env.local
+
+# Data
+data/
+!data/.gitkeep
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore

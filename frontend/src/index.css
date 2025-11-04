@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-0;
+  }
+
+  body {
+    @apply bg-base text-text antialiased;
+  }
+
+  /* Custom scrollbar for Catppuccin Mocha */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-base-darker;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-1 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-2;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-mauve hover:bg-mauve/80 text-base;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface-0 hover:bg-surface-1 text-text;
+  }
+
+  .btn-danger {
+    @apply btn bg-red hover:bg-red/80 text-base;
+  }
+
+  .card {
+    @apply bg-surface-0 rounded-lg shadow-lg border border-surface-1;
+  }
+
+  .input {
+    @apply bg-surface-0 border border-surface-1 rounded-lg px-4 py-2 text-text placeholder-overlay-0 focus:outline-none focus:ring-2 focus:ring-mauve focus:border-transparent;
+  }
+
+  .table-header {
+    @apply bg-surface-1 text-text-muted font-semibold uppercase text-sm tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-surface-0 hover:bg-surface-0/50 transition-colors;
+  }
+}
