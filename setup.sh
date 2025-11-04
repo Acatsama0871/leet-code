@@ -43,31 +43,14 @@ if [ -f data/02_state/leetcode.duckdb ]; then
     fi
 fi
 
-# Check if CSV files exist
+# Check if database exists
 echo ""
-echo "📂 Checking for CSV question lists..."
-if [ ! -d data/01_raw ]; then
-    echo "⚠️  data/01_raw/ not found. Please add your CSV files there."
+if [ -f data/leetcode.duckdb ]; then
+    echo "✓ Database found at data/leetcode.duckdb"
 else
-    csv_count=$(ls -1 data/01_raw/*.csv 2>/dev/null | wc -l)
-    if [ $csv_count -eq 0 ]; then
-        echo "⚠️  No CSV files found in data/01_raw/"
-        echo "   Please add your question list CSV files."
-    else
-        echo "✓ Found $csv_count CSV files"
-    fi
-fi
-
-# Load CSV data if Python environment exists
-if command -v uv &> /dev/null && [ -f load_data.py ]; then
-    echo ""
-    read -p "Load CSV data into database? (y/n) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        echo "📊 Loading data..."
-        uv run python load_data.py
-        echo "✓ Data loaded"
-    fi
+    echo "⚠️  Database not found. Make sure to either:"
+    echo "   1. Run the migration (if you have old data)"
+    echo "   2. Or ensure data/leetcode.duckdb exists"
 fi
 
 echo ""

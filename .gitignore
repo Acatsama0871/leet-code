@@ -19,13 +19,6 @@ backend/static/
 data/*.duckdb
 data/*.duckdb.wal
 
-# Python (old app)
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-
 # IDE
 .vscode/
 .idea/

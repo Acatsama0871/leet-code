@@ -89,21 +89,22 @@ cargo run --bin migrate
 cd ..
 ```
 
-### 5. Load Question Lists
+### 5. Prepare Database
 
-Make sure your CSV files are in `data/01_raw/`:
-- `neetcode_150.csv`
-- `neetcode_meta_list.csv`
-- `leetcode_meta_3mo.csv`
-- `adv_algo_questions.csv`
-- `pinterest.csv`
+You have two options:
 
-Load them into the database:
+**Option A: Use migration script (if you have old data)**
 ```bash
-# If you have the Python environment set up
-uv run python load_data.py
+# The migration script will copy everything from old database
+cd backend
+cargo run --bin migrate
+cd ..
+```
 
-# OR manually copy your existing data/02_state/leetcode.duckdb to data/leetcode.duckdb
+**Option B: Use existing database**
+```bash
+# If you already have a working data/leetcode.duckdb, you're all set!
+# Just make sure it's in the data/ directory
 ```
 
 ### 6. Start the Application

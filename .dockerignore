@@ -7,16 +7,6 @@
 !README.md
 CLAUDE.md
 
-# Python (old Streamlit app)
-__pycache__
-*.pyc
-.venv
-venv/
-*.py
-pyproject.toml
-uv.lock
-.python-version
-
 # Backend
 backend/target
 backend/.env
