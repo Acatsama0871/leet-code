@@ -18,7 +18,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Build Backend
-FROM rust:slim AS backend-builder
+FROM rust:bookworm-slim AS backend-builder
 
 WORKDIR /app
 
