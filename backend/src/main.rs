@@ -153,8 +153,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let app = Router::new()
         .nest("/api", api_routes)
         .fallback_service(
-            ServeDir::new("./static")
-                .not_found_service(ServeFile::new("./static/index.html"))
+            ServeDir::new("/app/static")
+                .not_found_service(ServeFile::new("/app/static/index.html"))
         )
         .layer(cors)
         .layer(TraceLayer::new_for_http());
