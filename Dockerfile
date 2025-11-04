@@ -41,9 +41,7 @@ RUN mkdir src && \
 # Copy backend source
 COPY backend/src ./src
 
-# Build backend with limited parallelism to reduce memory usage
-# This is especially important for DuckDB's C++ compilation on ARM64
-ENV CARGO_BUILD_JOBS=2
+# Build backend
 RUN cargo build --release
 
 # Stage 3: Final Runtime Image
